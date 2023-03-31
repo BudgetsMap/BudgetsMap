@@ -57,5 +57,9 @@
         @apply font-semibold mx-2 bg-danger-500 text-white rounded-md px-6 py-2.5 hover:bg-opacity-90 transition-all focus:bg-opacity-80
     }
 
+    .icon {
+        @apply text-primary-900 hover:text-primary-300 dark:text-white dark:hover:text-primary-200 mx-2 
+    }
+
 }
 

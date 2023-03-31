@@ -7,6 +7,7 @@ import Navbar from '~/components/navbar/Navbar';
 import { GlobalStore } from '~/core/context';
 
 import type { NavItemsMenuI } from '~/core/interfaces/menu';
+import Footer from '~/components/footer/Footer';
 
 export default component$(() => {
 
@@ -27,27 +28,30 @@ export default component$(() => {
   });
 
   const navItems: NavItemsMenuI[] = [
-    {name:'Inicio', route:'/'},
-    {name:'Blog', route:'/blog/'},
+    {name:'Blog', route:'/blog'},
     {name: 'Roadmap', route:'/roadmap/'},
-    {name: 'Iniciar sesión', route:'/login/'},
-    {name: 'Comenzar', route:'/register/'},
   ]
 
   return (
     <div class="bg-white dark:bg-primary-900">
       <Navbar>
           <div q:slot='navLogo' class={""}>
-            <span class={"font-bold text-lg text-primary dark:text-white"}>BudgetsMap</span>
+            <Link href='/' class={"font-bold text-lg text-primary dark:text-white"}>Budgets<span class={"text-secondary-500"}>Map</span></Link>
           </div>
-          <div q:slot='navItemsEnd' class={"flex flex-none items-center justify-center"}>
-            {
+          <div q:slot='navItemsStart' class={"flex flex-none items-center justify-center"}>
+          {
               navItems.map( (navItem) => 
               <Link key={navItem.route} href={navItem.route} class={{'nav-link':true, 'active-nav-item': pathname.startsWith(navItem.route)}}>{navItem.name}</Link>
               )
             }
-            <button class={"text-primary-800 dark:text-white mx-2"} onClick$={onClick$}>
-              <span class="material-symbols-outlined text-2xl p-2 hover:text-primary-500 dark:hover:text-primary-200">
+          </div>
+          <div q:slot='navItemsEnd' class={"flex flex-none items-center justify-center"}>
+            <button class={"btn-secondary"}>
+              Comenzar
+            </button>
+          
+            <button class={"mx-2"} onClick$={onClick$}>
+              <span class="material-symbols-outlined text-2xl p-2 icon">
                 {
                   state.theme === 'light' ? 'dark_mode' : 'light_mode'
                 }
@@ -74,6 +78,7 @@ export default component$(() => {
       <div class="mx-auto sm:px-6 lg:px-40">
         <Slot />
       </div>
+      <Footer />
     </div>
   );
 });
