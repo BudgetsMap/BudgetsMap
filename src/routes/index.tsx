@@ -1,113 +1,35 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-
-import Counter from '~/components/starter/counter/counter';
-import Hero from '~/components/starter/hero/hero';
-import Infobox from '~/components/starter/infobox/infobox';
-import Starter from '~/components/starter/next-steps/next-steps';
+// import Button from '~/components/button/Button';
+import { Link } from '@builder.io/qwik-city';
+import Button from '~/components/button/Button';
 
 export default component$(() => {
   return (
-    <>
-      <Hero />
-
-      <div class="section bright">
-        <div class="container center">
-          <Starter />
+    <div class="bg-white dark:bg-primary-900 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center h-screen">
+        <div class="text-primary-900  dark:text-white">
+          <h1 class="text-3xl md:text-6xl font-bold"><span class="text-secondary-500 italic">Presupuestar</span> nunca fue tan <span class="text-secondary-500 italic">fácil</span>.</h1>
+      
+          <p class="text-primary-900 dark:text-white my-8 text-lg">Con <span class="text-secondary-500 font-bold">BudgetsMap</span>, puedes tomar el control de tus finanzas y trabajar hacia un <span class={"text-secondary-500 font-bold"}>futuro financiero</span> más sólido y estable.</p>
+          <Link href='/register'>
+            <Button class={"btn-secondary"}>Comenzar</Button>
+          </Link>
         </div>
-      </div>
-
-      <div class="section">
-        <div class="container center">
-          <h3>
-            You can <b>count</b> on me
-          </h3>
-          <Counter />
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="container topics">
-          <Infobox>
-            <div q:slot="title" class="icon icon-cli">
-              CLI Commands
-            </div>
-            <>
-              <p>
-                <code>npm run dev</code>
-                <br />
-                Starts the development server and watches for changes
-              </p>
-              <p>
-                <code>npm run preview</code>
-                <br />
-                Creates production build and starts a server to preview it
-              </p>
-              <p>
-                <code>npm run build</code>
-                <br />
-                Creates production build
-              </p>
-              <p>
-                <code>npm run qwik add</code>
-                <br />
-                Runs the qwik CLI to add integrations
-              </p>
-            </>
-          </Infobox>
-
-          <div>
-            <Infobox>
-              <div q:slot="title" class="icon icon-apps">
-                Example Apps
-              </div>
-              <p>
-                Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
-                <a href="/demo/todolist">Todo App</a>.
-              </p>
-            </Infobox>
-
-            <Infobox>
-              <div q:slot="title" class="icon icon-community">
-                Community
-              </div>
-              <ul>
-                <li>
-                  <span>Questions or just want to say hi? </span>
-                  <a href="https://qwik.builder.io/chat" target="_blank">
-                    Chat on discord!
-                  </a>
-                </li>
-                <li>
-                  <span>Follow </span>
-                  <a href="https://twitter.com/QwikDev" target="_blank">
-                    @QwikDev
-                  </a>
-                  <span> on Twitter</span>
-                </li>
-                <li>
-                  <span>Open issues and contribute on </span>
-                  <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <span>Watch </span>
-                  <a href="https://qwik.builder.io/media/" target="_blank">
-                    Presentations, Podcasts, Videos, etc.
-                  </a>
-                </li>
-              </ul>
-            </Infobox>
+        <div class="relative mx-2">
+          <div class="relative z-10">
+          <img class="rounded-md shadow-md transition-all" src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' alt='home-image' />
           </div>
+          <div class="bg-gray-100 dark:bg-primary-700 absolute bottom-5 top-5 left-5 w-full h-full rounded-md shadow-md"></div>
+          
         </div>
       </div>
-    </>
+    </div>
   );
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Incio | BudgetsMap',
   meta: [
     {
       name: 'description',
