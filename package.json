@@ -1,7 +1,7 @@
 {
   "name": "budgetsmap",
   "description": "App with Routing built-in (recommended)",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "node": ">=15.0.0"
   },
@@ -22,15 +22,15 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.100.0",
-    "@builder.io/qwik-city": "0.100.0",
+    "@builder.io/qwik": "0.102.0",
+    "@builder.io/qwik-city": "0.102.0",
     "@types/eslint": "8.21.3",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
     "autoprefixer": "^10.4.14",
     "eslint": "8.36.0",
-    "eslint-plugin-qwik": "0.100.0",
+    "eslint-plugin-qwik": "0.102.0",
     "postcss": "^8.4.21",
     "prettier": "2.8.6",
     "tailwindcss": "^3.3.1",
