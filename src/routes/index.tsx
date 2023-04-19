@@ -8,11 +8,11 @@ export default component$(() => {
   return (
     <div class="bg-white dark:bg-primary-900 max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center h-screen">
-        <div class="text-primary-900  dark:text-white">
+        <div class="text-primary-800  dark:text-white">
           <h1 class="text-3xl md:text-6xl font-bold"><span class="text-secondary-500 italic">Presupuestar</span> nunca fue tan <span class="text-secondary-500 italic">fácil</span>.</h1>
       
-          <p class="text-primary-900 dark:text-white my-8 text-lg">Con Budgets<span class={"text-secondary-500"}>Map</span>, puedes tomar el control de tus finanzas y trabajar hacia un <span class={"text-secondary-500 font-bold"}>futuro financiero</span> más sólido y estable.</p>
-          <Link href='/register'>
+          <p class="text-primary-800 dark:text-white my-8 text-lg">Con <span class={"font-bold underline"}>Budgets</span><span class={"text-secondary-500 font-bold underline"}>Map</span>, puedes tomar el control de tus finanzas y trabajar hacia un <span class={"text-secondary-500 font-bold"}>futuro financiero</span> más sólido y estable.</p>
+          <Link href='/app/dashboard/'>
             <Button class={"btn-secondary"}>Comenzar</Button>
           </Link>
         </div>

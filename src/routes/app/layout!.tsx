@@ -28,8 +28,10 @@ export default component$(() => {
   });
 
   const navItems: NavItemsMenuI[] = [
-    {name:'Blog', route:'/blog'},
-    {name: 'Roadmap', route:'/roadmap/'},
+    {name:'Dashboard', route:'/app/dashboard/'},
+    {name:'Presupuesto', route:'/app/budget'},
+  
+
   ]
 
   return (
@@ -46,39 +48,21 @@ export default component$(() => {
             }
           </div>
           <div q:slot='navItemsEnd' class={"flex flex-none items-center justify-center"}>
-            <button class={"btn-secondary"}>
-              Comenzar
-            </button>
           
-            <button class={"mx-2"} onClick$={onClick$}>
-              <span class="material-symbols-outlined text-2xl p-2 icon">
+            <button onClick$={onClick$}>
+              <span class="material-symbols-outlined text-2xl icon">
                 {
                   state.theme === 'light' ? 'dark_mode' : 'light_mode'
                 }
               </span>
             </button>       
           </div>
-          <div q:slot='navItemsMobile'>
-          {
-            navItems.map( (navItem) => 
-            <Link key={navItem.route} href={navItem.route}  class={{ 'block': true,'nav-link':true, 'active-nav-item': pathname.startsWith(navItem.route)}}>{navItem.name}</Link>
-            )
-          }
-            <button class={"text-primary-900 mx-2 dark:text-primary-100 rounded-lg"} onClick$={onClick$}>
-              <span class="material-symbols-outlined">
-              {
-                state.theme === 'light' ? 'dark_mode' : 'light_mode'
-              }
-              </span>
-            </button>  
-                 
-          </div>
         </Navbar>
       
-      <div class="mx-auto sm:px-6 lg:px-40 text-primary-800 dark:text-white">
+      <div class="mx-6 lg:mx-40 text-primary-800 dark:text-white">
         <Slot />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 });
