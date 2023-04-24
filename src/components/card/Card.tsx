@@ -1,11 +1,11 @@
 import { Slot, component$} from "@builder.io/qwik";
 
-export type InputProps = {
+export type CardProps = {
     title?:string;
-    description?: string;
+    content?: string;
 }
 
-export default component$( ({title, description}: InputProps) => {
+export default component$( ({title, content}: CardProps) => {
     return(
         <div class="max-w-sm p-6 bg-white border border-primary-500 rounded-lg shadow-lg dark:bg-primary-700 dark:border-primary-600">
             {title ? 
@@ -15,7 +15,7 @@ export default component$( ({title, description}: InputProps) => {
                 : 
                 <Slot name="card-title" />
             }
-            {description ? <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">{description}</p> : <Slot name="card-desc"/>}
+            {content ? <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">{content}</p> : <Slot name="card-desc"/>}
             <Slot name="card-actions" />
         </div>
     );
