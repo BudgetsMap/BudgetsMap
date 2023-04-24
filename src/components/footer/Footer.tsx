@@ -33,7 +33,7 @@ export default component$( () => {
             </div>
             <div
                 class="bg-secondary-100 text-primary-800 dark:bg-primary-800 dark:text-white p-1 text-center ">
-                © 2023 Hecho con el {state.theme === 'light' ? '💜' : '💚'} - <span class={"font-bold"}>Budgets<span class={"text-secondary-500"}>Map</span></span>
+                © 2023 Hecho con el {state.theme === 'light' ? '💜' : '💚'} - <span class={"font-bold"}>Budgets<span class={"text-primary-300 dark:text-secondary-500"}>Map</span></span>
             </div>
         </footer>
     );
