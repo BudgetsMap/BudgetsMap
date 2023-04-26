@@ -1,12 +1,14 @@
-import { $, Slot, component$, useStyles$ } from '@builder.io/qwik';
+import { type PropFunction, $, Slot, component$, useStyles$ } from '@builder.io/qwik';
 import styles from "./Modal.css?inline";
 
-export type ModalProps = {
+export type BudgetsMapModalProps = {
     title?:string;
     content?: string;
     isVisible?: boolean;
-    onClose?(): void;
+    onClose: PropFunction<() => void>
 }
+
+export type ModalProps = BudgetsMapModalProps
 
 export default component$( ({title, content, isVisible, onClose}:ModalProps) => {
     useStyles$(styles);
