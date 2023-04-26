@@ -60,7 +60,7 @@
     }
 
     .icon {
-        @apply text-primary-900 hover:text-primary-300 dark:text-white dark:hover:text-primary-200 mx-2 
+        @apply text-primary-900 hover:text-primary-300 dark:text-white dark:hover:text-secondary-500 mx-2 
     }
 
     .navbar {

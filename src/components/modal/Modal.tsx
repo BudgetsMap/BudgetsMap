@@ -5,7 +5,7 @@ export type BudgetsMapModalProps = {
     title?:string;
     content?: string;
     isVisible?: boolean;
-    onClose: PropFunction<() => void>
+    onClose: PropFunction<() => boolean >
 }
 
 export type ModalProps = BudgetsMapModalProps
