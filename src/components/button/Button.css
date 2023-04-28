@@ -1,0 +1,46 @@
+.btn {
+    @apply px-6 py-2.5 mx-2 font-semibold transition-all focus:bg-opacity-80 rounded-sm hover:bg-opacity-90 text-white
+}
+.btn-outlined {
+    @apply btn bg-transparent border-solid border
+}
+.btn-primary {
+    @apply btn bg-primary-500
+}
+
+.btn-secondary {
+    @apply btn bg-secondary-500 
+}
+
+.btn-ghost {
+    @apply btn bg-gray-200 !text-primary-500
+}
+
+.btn-outlined-primary{
+    @apply btn-outlined border-primary-200 !text-primary-500 dark:!text-primary-200
+}
+
+.btn-outlined-secondary{
+    @apply  btn-outlined border-secondary-500 !text-secondary-500
+}
+
+.btn-outlined-ghost{
+    @apply font-semibold mx-2 bg-transparent border border-gray-900 text-gray-900 rounded-md px-6 py-2 
+    hover:bg-opacity-90 transition-all focus:bg-opacity-80
+}
+
+.btn-success{
+    @apply btn bg-success-500
+}
+
+.btn-info{
+    @apply btn bg-info-500
+}
+
+.btn-warning{
+    @apply btn bg-warning-500
+}
+
+.btn-danger{
+    @apply btn bg-danger-500
+}

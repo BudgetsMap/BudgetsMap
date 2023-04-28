@@ -7,15 +7,15 @@ export type CardProps = {
 
 export default component$( ({title, content}: CardProps) => {
     return(
-        <div class="max-w-sm p-6 bg-white border border-primary-500 rounded-lg shadow-lg dark:bg-primary-700 dark:border-primary-600">
+        <div class="max-w-sm rounded-sm p-6 bg-white shadow-lg dark:bg-primary-800">
             {title ? 
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-primary-800 dark:text-white">{title}</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-primary-500 dark:text-white">{title}</h5>
                 </a>
                 : 
                 <Slot name="card-title" />
             }
-            {content ? <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">{content}</p> : <Slot name="card-desc"/>}
+            {content ? <p class="mb-3 text-primary-500 text-opacity-70 dark:text-white dark:text-opacity-90">{content}</p> : <Slot name="card-desc"/>}
             <Slot name="card-actions" />
         </div>
     );

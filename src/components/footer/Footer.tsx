@@ -6,7 +6,7 @@ import { GlobalStore } from '~/core/context';
 export default component$( () => {
     const state = useContext(GlobalStore);
     return ( 
-        <footer class="bg-secondary-100 text-center text-white dark:bg-primary-800">
+        <footer class="bg-secondary-100 bg-opacity-20 text-center text-white dark:bg-primary-900">
             <div class="pt-6">
                 <div class="mb-6 flex justify-center">
                     <Link href="#!" class="icon">
@@ -32,8 +32,8 @@ export default component$( () => {
                 </div>
             </div>
             <div
-                class="bg-secondary-100 text-primary-800 dark:bg-primary-800 dark:text-white p-1 text-center ">
-                © 2023 Hecho con el {state.theme === 'light' ? '💜' : '💚'} - <span class={"font-bold"}>Budgets<span class={"text-primary-300 dark:text-secondary-500"}>Map</span></span>
+                class="bg-secondary-100 bg-opacity-20 text-primary-800 dark:bg-primary-900 dark:text-white p-1 text-center">
+                © 2023 Hecho con el {state.theme === 'light' ? '💜' : '💚'} - <span class={"font-bold"}>Budgets<span class={"text-secondary-500"}>Map</span></span>
             </div>
         </footer>
     );
