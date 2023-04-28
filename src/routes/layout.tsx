@@ -33,7 +33,7 @@ export default component$(() => {
   ]
 
   return (
-    <div class="bg-white dark:bg-primary-900">
+    <div class="bg-white dark:bg-primary-500">
       <Navbar>
           <div q:slot='navLogo' class={""}>
             <Link href='/' class={"font-bold text-lg text-primary dark:text-white"}>Budgets<span class={"text-secondary-500"}>Map</span></Link>
@@ -75,7 +75,7 @@ export default component$(() => {
           </div>
         </Navbar>
       
-      <div class="mx-auto sm:px-6 lg:px-40 text-primary-800 dark:text-white">
+      <div class="mx-auto sm:px-6 lg:px-40 text-primary-500 dark:text-white">
         <Slot />
       </div>
       <Footer />

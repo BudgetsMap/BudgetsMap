@@ -1,8 +1,10 @@
-import { component$ } from "@builder.io/qwik";
-import { Form, Link, routeAction$ } from "@builder.io/qwik-city";
+import { $, component$, useSignal } from "@builder.io/qwik";
+import { Form, routeAction$ } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Button from "~/components/button/Button";
 import Card from "~/components/card/Card";
 import Input from "~/components/input/Input";
+import Modal from "~/components/modal/Modal";
 
 
 export const useLogin = routeAction$(async ( ) => {
@@ -14,23 +16,29 @@ export const useLogin = routeAction$(async ( ) => {
 
 export default component$( () => {
     const action = useLogin()
+    const isVisibleModal = useSignal(false);
+    const openModal = $( ()=> isVisibleModal.value = !isVisibleModal.value );
     return (
         <div class={"h-screen"}>
             <div class={"mt-8"} >
                 <h1 class={"text-3xl font-bold"}>Presupuestos</h1>
-                <p class={"font-light text-sm text-primary-200 dark:text-secondary-200"}>En este formulario, por favor ingrese sus ingresos mensuales. Incluya su salario mensual y cualquier otro ingreso adicional que tenga.</p>
+                <p class={"text-sm text-primary-500 dark:text-white"}>En este formulario, por favor ingrese sus ingresos mensuales. Incluya su salario mensual y cualquier otro ingreso adicional que tenga.</p>
                 <div class={"grid grid-cols-1 justify-items-center gap-4 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}>
-                    <Card title="Hello Card" description="This is a description in a card component">
+                    <Card title="Hello Card" content="This is a description in a card component">
                         <div q:slot='card-actions' class={"grid place-items-center"}>
-                            <button class={"btn-secondary"}>Nuevo presupuesto</button>
+                            <Button class={"btn-primary"}>Nuevo presupuesto</Button>
                         </div>
                     </Card>
-                    <Card title="Mi primer presupuesto" description="This is a description in a card component" />
-                    <Card title="Mi primer presupuesto" description="This is a description in a card component" />
-                    <Card title="Mi primer presupuesto" description="This is a description in a card component" />
-                    <Card title="Mi primer presupuesto" description="This is a description in a card component" />
-
                 </div>
+                <Modal isVisible={isVisibleModal.value} onClose={openModal}>
+                  <div q:slot="modal-content">
+                    <Form>
+                      <div class={"py-2 px-8"}>
+                        <Input placeholder="Nombre Presupuesto" label="Nombre del presupuesto" type="text" />
+                      </div>
+                    </Form>
+                  </div>
+                </Modal>
                 
 
                 {/* <Form class={"m-6"} action={action}>
@@ -47,8 +55,6 @@ export default component$( () => {
         </div>
     );
 })
-
-
 
 export const head: DocumentHead = {
     title: 'Presupuesto | BudgetsMap',
